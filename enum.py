@@ -48,7 +48,7 @@ def process_file(input_file, name):
     enum = Enum(name)
     with open(input_file) as f:
         for line in f:
-            elements = line.split(',')
+            elements = line.split(',', 1)
             original = elements[0].strip()
             processed = name + camelize(original.lower())
             comment = elements[1].strip() if len(elements) > 0 else None
